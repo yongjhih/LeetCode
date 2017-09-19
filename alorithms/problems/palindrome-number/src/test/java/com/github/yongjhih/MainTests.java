@@ -97,4 +97,45 @@ public class MainTests {
         assertFalse(new Solution3().isPalindromeL(7463847412L));
     }
 
+    @Test
+    public void testReverse() {
+        System.out.println(Solution4.reverse(123));
+        assertTrue(Solution4.reverse(123) == 321);
+    }
+
+    @Test
+    public void testReverse2() {
+        assertTrue(Solution4.reverse(12321) == 12321);
+    }
+
+    @Test
+    public void testReverse3() {
+        assertTrue(Solution4.reverse(313) == 313);
+    }
+
+    @Test
+    public void testReverse4() {
+        System.out.println(Solution4.reverse(-321));
+        assertTrue(Solution4.reverse(-321) == -123);
+    }
+
+    @Test
+    public void test37() {
+        assertTrue(new Solution4().isPalindrome(121));
+    }
+
+    @Test
+    public void test38() {
+        assertFalse(new Solution4().isPalindrome(123));
+    }
+
+    @Test
+    public void test39() {
+        assertTrue(new Solution4().isPalindrome(-121));
+    }
+
+    @Test
+    public void test40() {
+        assertTrue(new Solution4().isPalindrome(313));
+    }
 }
