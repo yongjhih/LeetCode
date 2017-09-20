@@ -1,13 +1,16 @@
 buildscript {
+    ext.kotlin_version = '1.1.4-3'
     repositories {
         jcenter()
     }
 
     dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
 apply plugin: 'java'
+apply plugin: 'kotlin'
 
 repositories {
     jcenter()
@@ -15,11 +18,13 @@ repositories {
 
 dependencies {
     //testCompile files(System.getenv("JAVA_HOME") + "/lib/tools.jar")
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     testCompile 'junit:junit-dep:4.10'
     testCompile 'org.mockito:mockito-core:1.8.5'
     //testCompile 'com.google.guava:guava-testlib:17.0'
     //testCompile 'com.google.testing.compile:compile-testing:0.6'
     testCompile 'com.google.truth:truth:0.25'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
 }
 
 javadoc {
