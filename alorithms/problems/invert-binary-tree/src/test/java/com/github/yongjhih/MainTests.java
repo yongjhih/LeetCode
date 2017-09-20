@@ -1,9 +1,17 @@
 package com.github.yongjhih;
 
-public class Main {
-    public static void main(String[] args) {
-        /*
-        root = new TreeNode();
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+
+import com.github.yongjhih.TreeNode;
+import com.github.yongjhih.a.Solution;
+
+import org.junit.Test;
+
+public class MainTests {
+    @Test
+    public void test() {
+        TreeNode root = new TreeNode();
         root.val = 4;
         root.left = new TreeNode();
         root.right = new TreeNode();
@@ -31,6 +39,7 @@ public class Main {
         root.right.right.val = 9;
         root.right.right.left = null;
         root.right.right.right = null;
-        */
+
+        //assertTrue()
     }
 }

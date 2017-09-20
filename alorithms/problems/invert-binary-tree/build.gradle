@@ -9,17 +9,33 @@ buildscript {
 
 apply plugin: 'java'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 repositories {
     jcenter()
 }
 
 dependencies {
+    //testCompile files(System.getenv("JAVA_HOME") + "/lib/tools.jar")
+    testCompile 'junit:junit-dep:4.10'
+    testCompile 'org.mockito:mockito-core:1.8.5'
+    //testCompile 'com.google.guava:guava-testlib:17.0'
+    //testCompile 'com.google.testing.compile:compile-testing:0.6'
+    testCompile 'com.google.truth:truth:0.25'
+}
+
+javadoc {
+    //exclude "**/xxx/**"
+}
+
+test {
+    testLogging.showStandardStreams = true
+
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+    }
 }
 
 task execute(type:JavaExec) {
-   main = 'com.github.yongjhih.Solution'
-   classpath = sourceSets.main.runtimeClasspath
+    main = 'com.github.yongjhih.Solution'
+    classpath = sourceSets.main.runtimeClasspath
+    //args System.getProperty("exec.args").split()
 }
