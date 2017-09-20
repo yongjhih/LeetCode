@@ -11,4 +11,9 @@ public class MainTests {
     public void test() {
         assertEquals(new Solution().reverseWords(" the sky is blue "), "blue is sky the");
     }
+
+    @Test
+    public void test2() {
+        assertEquals(new Solution2().reverseWords(" the sky is blue "), "blue is sky the");
+    }
 }
