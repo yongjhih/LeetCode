@@ -20,12 +20,10 @@ class Solution {
 
         carry = (l1.val >= 10) ? 1 : 0;
         l1.val %= 10;
-        if (carry != 0) {
+        if (carry != 0 || l1.next != null || l2.next != null) {
             if (l1.next == null) l1.next = new ListNode(0);
             if (l2.next == null) l2.next = new ListNode(0);
         }
-        if (l1.next == null && l2.next != null) l1.next = new ListNode(0);
-        if (l1.next != null && l2.next == null) l2.next = new ListNode(0);
         return addTwoNumbers(l1.next, l2.next, carry, root);
     }
 }
