@@ -1,0 +1,31 @@
+buildscript {
+  ext.kotlin_version = '1.4.20'
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+  }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'application'
+
+mainClassName = 'leetcode.MainKt'
+
+defaultTasks 'run'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  testCompile 'junit:junit:4.11'
+  testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+}
+
+jar {
+  manifest { attributes 'Main-Class': 'leetcode.MainKt' }
+  from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
